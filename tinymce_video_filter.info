@@ -1,0 +1,7 @@
+type = module
+name = TinyMCE video filter plugin
+description = Provides a widget for TinyMCE to insert video filter tokens into content.
+backdrop = 1.x
+
+dependencies[] = tinymce
+dependencies[] = video_filter

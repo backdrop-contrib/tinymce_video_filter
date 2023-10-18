@@ -1,0 +1,28 @@
+<?php
+/**
+ * @file
+ * TinyMCE video filter module main code.
+ */
+
+/**
+ * Implements hook_tinymce_external_plugins().
+ */
+function tinymce_video_filter_tinymce_external_plugins($format) {
+  $module_url = base_path() . backdrop_get_path('module', 'tinymce_video_filter');
+  $plugins = array(
+    'video_filter' => array(
+      'plugin_path' => $module_url . '/js/plugins/video_filter/plugin.js',
+      'buttons' => array(
+        'video_filter' => array(
+          'icon' => 'embed',
+          'tooltip' => t('Add video'),
+        ),
+      ),
+      'variables' => array(
+        'videoFilterInstructionUrl' => url('video_filter/instructions'),
+        'videoFilterTooltip' => t('Add video'),
+      ),
+    ),
+  );
+  return $plugins;
+}
