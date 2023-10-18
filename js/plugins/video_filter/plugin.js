@@ -54,13 +54,14 @@ videoFilterTools.buildToken = function (data) {
  * Returns configuration for the TinyMCE dialog.
  */
 videoFilterTools.getDialogConfig = function () {
+  let editor = tinymce.activeEditor;
   let dialogConfig = {
-    title: tinymce.activeEditor.options.get('videoFilterTooltip'),
+    title: editor.options.get('videoFilterTooltip'),
     onSubmit: function (api) {
       let data = api.getData();
       if (data.videourl.value) {
         let token = videoFilterTools.buildToken(data);
-        tinymce.activeEditor.execCommand('mceInsertContent', false, token);
+        editor.execCommand('mceInsertContent', false, token);
       }
       api.close();
     },
@@ -91,7 +92,7 @@ videoFilterTools.getDialogConfig = function () {
           size: 1,
           items : [
             { value: 'none', text: 'None' },
-            { value: 'left', text: 'left' },
+            { value: 'left', text: 'Left' },
             { value: 'right', text: 'Right' },
             { value: 'center', text: 'Center' }
           ]
@@ -103,7 +104,7 @@ videoFilterTools.getDialogConfig = function () {
         },
         {
           type: 'htmlpanel',
-          html: '<iframe style="width:100%;" src="' + tinymce.activeEditor.options.get('videoFilterInstructionUrl') + '"></iframe>'
+          html: '<iframe style="width:100%;" src="' + editor.options.get('videoFilterInstructionUrl') + '"></iframe>'
         }
       ]
     },
