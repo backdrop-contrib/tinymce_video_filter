@@ -3,8 +3,10 @@
 TinyMCE plugin to insert external videos (actually tokens) into content, using
  a dialog.
 
-The actual functionality (filter for display) is provided by the Video Filter
- module, this plugin only provides the editor dialog.
+The functionality to render the videos is provided by the
+ [Video Filter module](https://backdropcms.org/project/video_filter). This
+ plugin only provides the editor dialog to conveniently insert by only
+ pasting the URL (and setting dimensions).
 
 ## Installation
 
