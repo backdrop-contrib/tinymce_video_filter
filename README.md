@@ -1,6 +1,6 @@
 # TinyMCE video filter
 
-*Important note:* The plugin has been merged with
+OBSOLETE❗ This plugin has been merged with
 [Video Filter](https://backdropcms.org/project/video_filter) in its version
 1.x-3.5.0.
 This module's obsolete now, and can safely get uninstalled.
